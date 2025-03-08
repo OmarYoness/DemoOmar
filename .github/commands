@@ -1,14 +1,8 @@
-
-mkdir DEMOOMAR
-cd DEMOOMAR
+mkdir DemoOmar
+cd DemoOmar
 mkdir main
 cd main
 mkdir java
-
-
-echo "# DEMOOMAR" >> README.md
-echo public class Main { public static void main(String[] args) { System.out.println("Hello, Omar!"); } } > Main.java
-
 
 
 git init
@@ -19,29 +13,22 @@ echo .DS_Store >> .gitignore
 git add .
 git commit -m "Initial commit: Java project setup"
 
-
-git remote add origin https://github.com/OmarYoness/DEMOOMAR.git
+git remote add origin https://github.com/OmarYoness/DemoOmar.git
 git branch -M main
 git push -u origin main
 
-#
 mkdir -p .github\workflows
 echo name: Java CI > .github\workflows\ci.yml
-
-
 
 git add .github\workflows\ci.yml
 git commit -m "Add GitHub Actions workflow"
 git push origin main
 
-echo pipeline { agent any stages { stage('Checkout') { steps { git branch: 'main', url: 'https://github.com/OmarYoness/DEMOOMAR-MAIN.git' } } stage('Build') { steps { script { sh 'javac src/main/java/Main.java' } } } stage('Run') { steps { script { sh 'java -cp src/main/java Main' } } } } } > Jenkinsfile
+echo pipeline { agent any stages { stage('Checkout') { steps { git branch: 'main', url: 'https://github.com/OmarYoness/DemoOmar.git' } } stage('Build') { steps { script { sh 'javac Main.java' } } } stage('Run') { steps { script { sh 'java Main' } } } } } > Jenkinsfile
 
-# Stage, Commit, and Push Jenkinsfile
 git add Jenkinsfile
 git commit -m "Add Jenkinsfile for Jenkins pipeline"
 git push origin main
 
-# Pull Changes if Push Fails
 git pull origin main --rebase
 git push origin main
-
