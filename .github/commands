@@ -1,18 +1,15 @@
 
 mkdir DEMOOMAR
 cd DEMOOMAR
-mkdir src
-cd src
 mkdir main
 cd main
 mkdir java
-cd ..\..\  # Go back to the root of the project
 
-# Create README.md and Main.java Files
+
 echo "# DEMOOMAR" >> README.md
 echo public class Main { public static void main(String[] args) { System.out.println("Hello, Omar!"); } } > Main.java
 
-type \Main.java
+
 
 git init
 echo *.class > .gitignore
