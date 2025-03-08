@@ -1,6 +1,6 @@
 
-mkdir DEMOOMAR-MAIN
-cd DEMOOMAR-MAIN
+mkdir DEMOOMAR
+cd DEMOOMAR
 mkdir src
 cd src
 mkdir main
@@ -9,10 +9,10 @@ mkdir java
 cd ..\..\  # Go back to the root of the project
 
 # Create README.md and Main.java Files
-echo "# DEMOOMAR-MAIN" >> README.md
-echo public class Main { public static void main(String[] args) { System.out.println("Hello, Omar!"); } } > src\main\java\Main.java
+echo "# DEMOOMAR" >> README.md
+echo public class Main { public static void main(String[] args) { System.out.println("Hello, Omar!"); } } > Main.java
 
-type src\main\java\Main.java
+type \Main.java
 
 git init
 echo *.class > .gitignore
@@ -23,7 +23,7 @@ git add .
 git commit -m "Initial commit: Java project setup"
 
 
-git remote add origin https://github.com/OmarYoness/DEMOOMAR-MAIN.git
+git remote add origin https://github.com/OmarYoness/DEMOOMAR.git
 git branch -M main
 git push -u origin main
 
